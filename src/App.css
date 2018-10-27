@@ -320,6 +320,9 @@ form input:focus, textarea {
     }
     form input, textarea{
       width: 90%;
+      margin: 0px;
+      margin-bottom: 10px;
+
     }
     .submit {
       height: 75px;
@@ -329,7 +332,7 @@ form input:focus, textarea {
       border: 1px solid #616161;
       transition: .3s;
       width: 90%;
-      margin-left: 15px;
+      margin: 0px;
     }
     .popped-img {
       width: 100%;
