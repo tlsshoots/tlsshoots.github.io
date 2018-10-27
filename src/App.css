@@ -297,7 +297,7 @@ form input:focus, textarea {
     .bg {
       left: -400px;
       width: 1200px;
-      opacity: .2;
+      opacity: .4;
     }
     .top {
       height: 700px;
