@@ -223,7 +223,7 @@ class App extends Component {
             <label>
               <textarea ref="details" onChange={this.handleChange.bind(this)} type="text" name="details" placeholder="Please describe the type of shoot you are interested in." />
             </label>
-            <input id="submit" ref="submit" onClick={this.handleSubmit.bind(this)} type="submit" value="Submit" />
+            <input className="submit" ref="submit" onClick={this.handleSubmit.bind(this)} type="submit" value="Submit" />
           </form>
         </div>
         <div className="footer">

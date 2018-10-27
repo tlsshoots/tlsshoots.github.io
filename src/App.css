@@ -240,18 +240,18 @@ form input:focus, textarea {
  outline: none;
 }
 
-#submit {
-  width: 25%;
-  height: 75px;
-  align-self: center;
-  background-color: #000;
-  color: #fff;
-  border: 1px solid #616161;
-  transition: .3s;
+.submit {
+  width: 25% !important;
+  height: 75px !important;
+  align-self: center !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 1px solid #616161 !important;
+  transition: .3s !important;
 }
 
-#submit:active {
-  background-color: #616161;
+.submit:active {
+  background-color: #616161 !important;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -312,14 +312,14 @@ form input:focus, textarea {
     form input, textarea{
       width: 90%;
     }
-    #submit {
-      height: 75px;
-      align-self: center;
-      background-color: #000;
-      color: #fff;
-      border: 1px solid #616161;
-      transition: .3s;
-      width: 90%;
+    .submit {
+      height: 75px !important;
+      align-self: center !important;
+      background-color: #000 !important;
+      color: #fff !important;
+      border: 1px solid #616161 !important;
+      transition: .3s !important;
+      width: 90% !important;
     }
     .popped-img {
       width: 100%;
