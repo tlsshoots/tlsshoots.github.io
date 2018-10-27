@@ -248,6 +248,9 @@ form input:focus, textarea {
   color: #fff !important;
   border: 1px solid #616161 !important;
   transition: .3s !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .submit:active {

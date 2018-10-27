@@ -147,7 +147,7 @@ class App extends Component {
       this.refs['email'].hidden = true
       this.refs['phone'].hidden = true
       this.refs['details'].hidden = true
-      this.refs['submit'].hidden = true
+      this.refs['submit'].style.display = 'none'
       this.refs['ty'].hidden = false
 
     await axios.post('https://expresstls.herokuapp.com/mail', {
@@ -223,7 +223,9 @@ class App extends Component {
             <label>
               <textarea ref="details" onChange={this.handleChange.bind(this)} type="text" name="details" placeholder="Please describe the type of shoot you are interested in." />
             </label>
-            <input className="submit" ref="submit" onClick={this.handleSubmit.bind(this)} type="submit" value="Submit" />
+            <div className="submit" ref="submit" onClick={this.handleSubmit.bind(this)} type="submit" value="Submit">
+              Submit
+            </div>
           </form>
         </div>
         <div className="footer">
