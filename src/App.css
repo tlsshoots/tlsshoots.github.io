@@ -1,14 +1,8 @@
 .App {
   text-align: center;
   transition: .7s;
-  /* font-family: times sans-serif; */
   font-family: 'Maven Pro', sans-serif;
-  width: 100vw;
-  height: 100vh;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  background-color: #00000090;
-
+  overflow: hidden;
 
 }
 
@@ -22,8 +16,6 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  /* background-color: #00000090; */
-
 }
 
 .splash {
@@ -31,8 +23,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  /* margin-right: 10px; */
-  /* margin-left: 10px; */
   align-items: center;
   margin-top: 70px;
 }
@@ -48,7 +38,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* height: 700px; */
 }
 
 .about h2 {
@@ -72,7 +61,6 @@
 }
 
 .header {
-  /* background-color: #000000; */
   min-height: 15vh;
   height: 100px;
   display: flex;
@@ -88,7 +76,6 @@
 }
 
 .header p {
-  /* font-family: times sans-serif; */
   font-weight: 200;
   margin-right: 45px;
   font-size: 21px;
@@ -119,7 +106,9 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   z-index: -1;
+  opacity: .5;
 }
 
 .logo {
@@ -141,7 +130,6 @@
   height: 15%;
   margin-right: 0%;
   background-color: #000;
-  /* box-shadow: 0px 0px 75px #ffffff20; */
   transition: .5s;
   justify-content: center;
   align-items: center;
@@ -152,14 +140,8 @@
 .button h3 {
   color: white;
   font-family: 'Maven Pro', sans-serif;
-  /* font-family: times sans-serif; */
   font-weight: 400;
-
   font-size: calc(10px + 2vmin);
-}
-
-.button:hover {
-  /* box-shadow: 0px 0px 10px #ffffff50; */
 }
 
 .button:active {
@@ -209,9 +191,6 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* padding: 75px; */
 }
 
 .footer p {
@@ -223,7 +202,6 @@
 }
 
 .contact {
-  background: #00000090;
   display: flex;
   flex-direction: column;
   padding: 75px;
@@ -304,23 +282,15 @@ form input:focus, textarea {
     }
 }
 
-/* @media only screen and (max-width: 700px) {
-    .bg {
-      width: 700px;
-
-    }
-} */
-
 
 @media only screen and (max-width: 700px) {
     .bg {
       left: -400px;
       width: 1200px;
-      /* opacity: .5; */
+      opacity: .2;
     }
     .top {
       height: 700px;
-      /* background-color: #00000090; */
     }
     .splash {
       flex-direction: column;
@@ -337,8 +307,6 @@ form input:focus, textarea {
       justify-content: space-around;
     }
     .header p {
-      /* font-family: times sans-serif; */
-      /* font-weight: 200; */
       margin-right: 0px;
     }
     form input, textarea{
@@ -361,6 +329,9 @@ form input:focus, textarea {
     }
     .logo-2 {
       width: 15%;
+    }
+    .footer {
+      flex-direction: column;
     }
 
 }

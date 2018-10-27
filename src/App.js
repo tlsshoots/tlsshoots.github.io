@@ -15,8 +15,6 @@ import images from './gallery'
 library.add(faInstagram)
 library.add(faEnvelope)
 
-// import img from './BusinessCard_Front_Final.jpg'
-
 class App extends Component {
 
   constructor() {
