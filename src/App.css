@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  transition: .7s;
+  /* font-family: times sans-serif; */
+  font-family: 'Maven Pro', sans-serif;
+
 }
 
 .App-logo {
@@ -7,19 +11,270 @@
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.top {
+  display: flex;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #00000090;
+
+}
+
+.splash {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* margin-right: 10px; */
+  /* margin-left: 10px; */
+  align-items: center;
+  margin-top: 70px;
+}
+
+.about {
+  background: #000000;
+
+  color: white;
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  /* height: 700px; */
+}
+
+.about h2 {
+  font-size: calc(15px + 2vmin);
+  font-weight: bold;
+}
+
+.about p {
+  text-align: left;
+  font-size: calc(4px + 2vmin);
+  color: white;
+  font-weight: 100;
+  width: 50%;
+  margin: 50px;
+  background: #61616100;
+  border-radius: 5px;
+  padding: 25px;
+  padding-top: 75px;
+  padding-bottom: 75px;
+  border: 1px solid #616161;
+}
+
+.header {
+  /* background-color: #000000; */
+  min-height: 15vh;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.header p {
+  /* font-family: times sans-serif; */
+  font-weight: 200;
+  margin-right: 45px;
+  font-size: 21px;
+  transition: .3s;
+  color: #4d4d4d
+}
+
+.header p:hover {
+  color: #fff
+}
+
+.header p:active {
+  color: #424242;
+  transition: .1s;
+}
+
+.header .active {
+  color: #fff;
+
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.logo {
+  width: 25%;
+  margin-left: 0%;
+}
+
+.logo-2 {
+  width: 10%;
+}
+
+.logo-2:active {
+  opacity: .5;
+}
+
+.button {
+  display: flex;
+  width: 20%;
+  height: 15%;
+  margin-right: 0%;
+  background-color: #000;
+  /* box-shadow: 0px 0px 75px #ffffff20; */
+  transition: .5s;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #616161;
+  border-radius: 5px;
+}
+
+.button h3 {
+  color: white;
+  font-family: 'Maven Pro', sans-serif;
+  /* font-family: times sans-serif; */
+  font-weight: 400;
+
+  font-size: calc(10px + 2vmin);
+}
+
+.button:hover {
+  /* box-shadow: 0px 0px 10px #ffffff50; */
+}
+
+.button:active {
+  background-color: #212121;
+  transition: .1s;
+}
+
+.img-card {
+  height: 250px;
+  width: 250px;
+  position: relative;
+  background-color: #000;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.img-itm {
+  width: 150%;
+  object-fit: cover;
+  background-color: #000;
+}
+
+.img-gal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pop-img {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  background: #00000099;
+  height: 100%;
+  transition: .5s;
+}
+
+.footer {
+  background: #000;
+  height: 200px;
+  margin-top: -20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* padding: 75px; */
+}
+
+.footer p {
+  color: #616161;
+}
+
+.footer a {
+  margin: 10px;
+}
+
+.contact {
+  background: #00000090;
+  display: flex;
+  flex-direction: column;
+  padding: 75px;
+}
+
+
+.contact h2 {
+  font-size: calc(15px + 2vmin);
+  font-weight: bold;
+  color: #f5f5f5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+form input, textarea{
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  border: 0px;
+  box-shadow: 0px;
+  font-size: 15px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #e0e0e0;
+}
+
+textarea {
+  height: 100px;
+}
+
+form input:focus, textarea {
+ outline: none;
+}
+
+#submit {
+  width: 25%;
+  height: 75px;
+  /* padding: 0px; */
+  /* margin: 0px; */
+  align-self: center;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #616161;
+  transition: .3s;
+}
+
+#submit:active {
+  background-color: #616161;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: .5; /* Firefox */
 }
 
 @keyframes App-logo-spin {
@@ -29,4 +284,63 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@media only screen and (max-width: 900px) {
+    .bg {
+      width: 900px;
+
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .bg {
+      width: 800px;
+
+    }
+}
+
+/* @media only screen and (max-width: 700px) {
+    .bg {
+      width: 700px;
+
+    }
+} */
+
+
+@media only screen and (max-width: 700px) {
+    .bg {
+      left: -400px;
+      width: 1200px;
+      /* opacity: .5; */
+    }
+    .top {
+      height: 700px;
+      background-color: #00000090;
+    }
+    .splash {
+      flex-direction: column;
+      justify-content: center;
+    }
+    .logo {
+      width: 45%;
+    }
+    .button {
+      width: 150px;
+      height: 75px;
+    }
+    .header {
+      justify-content: space-around;
+    }
+    .header p {
+      /* font-family: times sans-serif; */
+      /* font-weight: 200; */
+      margin-right: 0px;
+    }
+    form input, textarea{
+      width: 90%;
+    }
+    #submit {
+      width: 90%;
+    }
 }
