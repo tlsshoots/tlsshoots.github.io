@@ -326,7 +326,7 @@ form input:focus, textarea {
 
     }
     .submit {
-      height: 75px;
+      height: 50px;
       align-self: center;
       background-color: #000;
       color: #fff;
@@ -334,6 +334,7 @@ form input:focus, textarea {
       transition: .3s;
       width: 90%;
       margin: 0px;
+      margin-top: 10px;
     }
     .popped-img {
       width: 100%;
