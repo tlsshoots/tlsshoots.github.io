@@ -259,8 +259,6 @@ form input:focus, textarea {
 #submit {
   width: 25%;
   height: 75px;
-  /* padding: 0px; */
-  /* margin: 0px; */
   align-self: center;
   background-color: #000;
   color: #fff;
@@ -341,6 +339,15 @@ form input:focus, textarea {
       width: 90%;
     }
     #submit {
+      height: 75px;
+      align-self: center;
+      background-color: #000;
+      color: #fff;
+      border: 1px solid #616161;
+      transition: .3s;
       width: 90%;
+    }
+    .popped-img {
+      width: 100%;
     }
 }

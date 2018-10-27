@@ -152,7 +152,7 @@ class App extends Component {
       this.refs['submit'].hidden = true
       this.refs['ty'].hidden = false
 
-      const form =  await axios.post('https://expresstls.herokuapp.com/mail', {
+    await axios.post('https://expresstls.herokuapp.com/mail', {
         name: name,
         email: email,
         phone: phone,
@@ -160,6 +160,7 @@ class App extends Component {
       })
     } else {
       this.refs['err'].hidden = false
+      this.refs['ty'].scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
   }
@@ -179,7 +180,7 @@ class App extends Component {
               }
             </div>
             <div onClick={this.togglePopImage.bind(this)} style={this.state.activeImgStyle}  className="pop-img">
-              <img src={this.state.activeImg} style={{resizeMode: 'contain', transition: '.5s'}} alt="logo" />
+              <img src={this.state.activeImg} class="popped-img" style={{resizeMode: 'contain', transition: '1s', background: '#000'}} alt="logo" />
             </div>
           </div>
         ) :
@@ -210,7 +211,7 @@ class App extends Component {
 
         <div ref="contact" className="contact">
           <h2>contact</h2>
-            <span hidden ref="err" style={{color: 'red', fontWeight: 'bold'}}>Please fill all fields before submitting</span>
+          <span hidden ref="err" style={{color: 'red', fontWeight: 'bold'}}>Please fill all fields before submitting</span>
           <span hidden ref="ty" style={{color: 'white', fontWeight: 'bold', fontSize: 21}}>Thank You! Expect a response shortly!</span>
           <form>
             <label>
