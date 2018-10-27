@@ -1,7 +1,9 @@
 
 html {
-    overflow: hidden;
-    height: 100%;
+  /* position: fixed; */
+  /* overflow: hidden; */
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -13,7 +15,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #000;
+  position: fixed;
+  overflow: hidden;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  /* position:relative;  */
+  /* overflow-x:hidden; */
   height: 100%;
+  width: 100%;
   overflow: auto;
 }
 

@@ -160,7 +160,7 @@ class App extends Component {
       })
     } else {
       this.refs['err'].hidden = false
-      this.refs['ty'].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      this.refs['contact'].scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
   }
@@ -171,7 +171,7 @@ class App extends Component {
       {
         this.state.gallery ?
         (
-          <div>
+          <div style={{height: 'auto', position: 'relative'}}>
             <Header homeSwitch={this.goHome.bind(this)} />
             <img src={logo} onClick={this.toggleGallery.bind(this)} className="logo-2" alt="logo" />
             <div className="img-gal">
@@ -199,7 +199,6 @@ class App extends Component {
 
             <div ref="about" className="about">
               <p>
-
                 <strong style={{fontSize: 25}}>About</strong><br/><br/>
                 I’m Terrance Shields and I am an 8 year US Army Veteran with a passion for Photography, Travel and Good Conversation with Great People. Everyone’s story of life is a beautiful kaleidoscope mixed with what we do and not always knowing where we are going. Photography allows me to capture your most personal moments for you to save as a  reminder of your life’s journey.  Remember, It is not how you look, but rather how you feel about yourself and what to some might be just an average photo shoot, to you could be the discovery of a new chapter in your life—the empowerment chapter, the resurgence or whatever you wanna call it. All I know is you will never see yourself the same way again once we’re done.
               </p>
@@ -210,7 +209,7 @@ class App extends Component {
       }
 
         <div ref="contact" className="contact">
-          <h2>contact</h2>
+          <h2>Contact</h2>
           <span hidden ref="err" style={{color: 'red', fontWeight: 'bold'}}>Please fill all fields before submitting</span>
           <span hidden ref="ty" style={{color: 'white', fontWeight: 'bold', fontSize: 21}}>Thank You! Expect a response shortly!</span>
           <form>
