@@ -217,6 +217,9 @@
 form {
   display: flex;
   flex-direction: column;
+  /* align-items: center; */
+  width: 100%;
+  position: relative;
 
 }
 
@@ -241,20 +244,23 @@ form input:focus, textarea {
 }
 
 .submit {
-  width: 25% !important;
-  height: 75px !important;
-  align-self: center !important;
-  background-color: #000 !important;
-  color: #fff !important;
-  border: 1px solid #616161 !important;
-  transition: .3s !important;
+  width: 25%;
+  height: 75px;
+  align-self: center;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #616161;
+  transition: .3s;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
 }
 
 .submit:active {
-  background-color: #616161 !important;
+  background-color: #616161;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -316,13 +322,14 @@ form input:focus, textarea {
       width: 90%;
     }
     .submit {
-      height: 75px !important;
-      align-self: center !important;
-      background-color: #000 !important;
-      color: #fff !important;
-      border: 1px solid #616161 !important;
-      transition: .3s !important;
-      width: 90% !important;
+      height: 75px;
+      align-self: center;
+      background-color: #000;
+      color: #fff;
+      border: 1px solid #616161;
+      transition: .3s;
+      width: 90%;
+      margin-left: 15px;
     }
     .popped-img {
       width: 100%;
