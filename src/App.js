@@ -6,14 +6,16 @@ import img from './tls-camera.jpg'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faInstagram } from '@fortawesome/fontawesome-free-brands'
+import { faInstagram, faTwitter, faFacebook } from '@fortawesome/fontawesome-free-brands'
+
 import Header from './components/header.js'
-
-
 import images from './gallery'
 
 library.add(faInstagram)
+library.add(faTwitter)
+library.add(faFacebook)
 library.add(faEnvelope)
+
 
 class App extends Component {
 
@@ -170,7 +172,7 @@ class App extends Component {
         this.state.gallery ?
         (
           <div style={{height: 'auto', position: 'relative'}}>
-            <Header homeSwitch={this.goHome.bind(this)} />
+            <Header homeSwitch={this.goHome.bind(this)} gallerySwitch={this.toggleGallery.bind(this)} />
             <img src={logo} onClick={this.toggleGallery.bind(this)} className="logo-2" alt="logo" />
             <div className="img-gal">
               {
@@ -186,18 +188,18 @@ class App extends Component {
           <div>
             <div className="top">
               <img src={img} className="bg" alt="logo" />
-              <Header homeSwitch={this.goHome.bind(this)} />
+              <Header homeSwitch={this.goHome.bind(this)} gallerySwitch={this.toggleGallery.bind(this)} />
               <div className="splash">
                 <img src={logo} className="logo" alt="logo" />
-                <div onClick={this.toggleGallery.bind(this)} className="button">
-                  <h3>gallery</h3>
-                </div>
+                <div></div>
               </div>
             </div>
 
             <div ref="about" className="about">
               <p>
-                <strong style={{fontSize: 25}}>About</strong><br/><br/>
+                <span
+                   style={{fontSize: 25, color: '#d4ae93'}}>About Me</span
+                   ><br/><br/><br/>
                 I’m Terrance Shields and I am an 8 year US Army Veteran with a passion for Photography, Travel and Good Conversation with Great People. Everyone’s story of life is a beautiful kaleidoscope mixed with what we do and not always knowing where we are going. Photography allows me to capture your most personal moments for you to save as a  reminder of your life’s journey.  Remember, It is not how you look, but rather how you feel about yourself and what to some might be just an average photo shoot, to you could be the discovery of a new chapter in your life—the empowerment chapter, the resurgence or whatever you wanna call it. All I know is you will never see yourself the same way again once we’re done.
               </p>
             </div>
@@ -208,7 +210,7 @@ class App extends Component {
 
         <div ref="contact" className="contact">
           <h2>Contact</h2>
-          <span hidden ref="err" style={{color: 'red', fontWeight: 'bold'}}>Please fill all fields before submitting</span>
+          <span hidden ref="err" style={{color: '#f44336', fontWeight: 'bold'}}>Please fill all fields before submitting</span>
           <span hidden ref="ty" style={{color: 'white', fontWeight: 'bold', fontSize: 21}}>Thank You! Expect a response shortly!</span>
           <form>
             <label>
@@ -224,16 +226,26 @@ class App extends Component {
               <textarea ref="details" onChange={this.handleChange.bind(this)} type="text" name="details" placeholder="Please describe the type of shoot you are interested in." />
             </label>
             <div className="submit" ref="submit" onClick={this.handleSubmit.bind(this)} type="submit" value="Submit">
-              <h3>submit</h3>
+              <h3>Submit</h3>
             </div>
           </form>
         </div>
         <div className="footer">
           <div>
-            <a target="_blank" href="https://www.instagram.com/tlsshoots/"><FontAwesomeIcon color="#616161" icon={faInstagram} size="2x" /></a>
-            <a target="_blank" href="mailto:info@tlsshoots.com"><FontAwesomeIcon color="#616161" icon={faEnvelope} size="2x" /></a>
+            <a target="_blank" href="https://www.instagram.com/tlsshoots/">
+              <FontAwesomeIcon className="icon" icon={faInstagram} />
+            </a>
+            <a target="_blank" href="https://twitter.com/tlsshoots">
+              <FontAwesomeIcon className="icon" icon={faTwitter} />
+            </a>
+            <a target="_blank" href="hhttps://www.facebook.com/TLS-Shoots-LLC-326188911277649/">
+              <FontAwesomeIcon className="icon" icon={faFacebook} />
+            </a>
+            <a target="_blank" href="mailto:info@tlsshoots.com">
+              <FontAwesomeIcon className="icon" icon={faEnvelope} />
+            </a>
           </div>
-          <p>Copyright © 2018. All Rights Reserved</p>
+          <p style={{color: '#424242', fontSize: 12}}>Copyright © 2018. All Rights Reserved</p>
         </div>
       </div>
     );

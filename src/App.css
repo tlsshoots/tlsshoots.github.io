@@ -3,7 +3,6 @@
   transition: .7s;
   font-family: 'Maven Pro', sans-serif;
   overflow: hidden;
-
 }
 
 .App-logo {
@@ -28,7 +27,7 @@
 }
 
 .about {
-  background: #000000;
+  background: rgba(0,0,0,.80);
 
   color: white;
   padding: 0px;
@@ -43,21 +42,23 @@
 .about h2 {
   font-size: calc(15px + 2vmin);
   font-weight: bold;
+  color: #d4ae93;
 }
 
 .about p {
   text-align: left;
-  font-size: calc(4px + 2vmin);
-  color: white;
+  font-size: calc(6px + 2vmin);
+  color: #616161;
   font-weight: 100;
   width: 50%;
   margin: 50px;
-  background: #61616100;
   border-radius: 5px;
-  padding: 25px;
+  padding: 75px;
   padding-top: 75px;
   padding-bottom: 75px;
-  border: 1px solid #616161;
+
+
+
 }
 
 .header {
@@ -113,7 +114,7 @@
 
 .logo {
   width: 25%;
-  margin-left: 0%;
+  margin-right: 15%;
 }
 
 .logo-2 {
@@ -181,16 +182,30 @@
   width: 100%;
   background: #00000099;
   height: 100%;
-  transition: .5s;
+  transition: .3s;
+}
+
+.icon {
+  color: #616161;
+  font-size: 21px;
+  transition: .3s;
+}
+
+.icon:hover {
+  color: #9e9e9e;
+}
+
+.icon:active {
+  color: #212121;
 }
 
 .footer {
   background: #000;
-  height: 200px;
-  margin-top: -20px;
+  height: 100px;
+  padding-top: 10px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -212,7 +227,7 @@
 .contact h2 {
   font-size: calc(15px + 2vmin);
   font-weight: bold;
-  color: #f5f5f5;
+  color: #d4ae93;
 }
 
 form {
@@ -228,12 +243,16 @@ form input, textarea{
   width: 50%;
   height: 30px;
   border-radius: 5px;
-  border: 0px;
+  border: 1px solid #616161;
   box-shadow: 0px;
   font-size: 15px;
   padding: 10px;
   margin: 10px;
-  background-color: #e0e0e0;
+  color: #fff;
+  /* background-color: rgba(212,174,147,.60); */
+  background-color: rgba(0,0,0,.70);
+  /* background-color: #9B806E99; */
+  ;
 }
 
 textarea {
@@ -248,9 +267,9 @@ form input:focus, textarea {
   width: 25%;
   height: 75px;
   align-self: center;
-  background-color: #000;
-  color: #fff;
-  border: 1px solid #616161;
+  background-color: #d4ae93;
+  color: #212121;
+  border: 0px solid #616161;
   transition: .3s;
   display: flex;
   justify-content: center;
@@ -265,7 +284,7 @@ form input:focus, textarea {
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: black;
+    color: #e0e0e0;
     opacity: .5; /* Firefox */
 }
 
@@ -308,6 +327,7 @@ form input:focus, textarea {
     }
     .logo {
       width: 45%;
+      margin-right: 0%;
     }
     .button {
       width: 150px;
@@ -320,19 +340,14 @@ form input:focus, textarea {
       margin-right: 0px;
     }
     form input, textarea{
-      width: 90%;
+      width: 100%;
       margin: 0px;
       margin-bottom: 10px;
 
     }
     .submit {
       height: 50px;
-      align-self: center;
-      background-color: #000;
-      color: #fff;
-      border: 1px solid #616161;
-      transition: .3s;
-      width: 90%;
+      width: 100%;
       margin: 0px;
       margin-top: 10px;
     }
