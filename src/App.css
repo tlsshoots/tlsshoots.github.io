@@ -56,9 +56,6 @@
   padding: 75px;
   padding-top: 75px;
   padding-bottom: 75px;
-
-
-
 }
 
 .header {
@@ -220,12 +217,12 @@
 }
 
 .img-itm {
-  width: 375px;
+  width: 250px;
   position: absolute;
-  left: -50px;
+  /* left: -50px; */
   /* align-self: center; */
-  /* height: 250px; */
-  /* object-fit: cover; */
+  height: 250px;
+  object-fit: cover;
   background-color: #000;
   /* margin-top: 10px; */
 }

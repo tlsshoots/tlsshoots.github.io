@@ -332,7 +332,7 @@ renderAlbums() {
                style={{fontSize: 25, color: '#d4ae93'}}>
                About Me
              </span><br/><br/><br/>
-            I’m Terrance Shields and I am an 8 year US Army Veteran with a passion for Photography, Travel and Good Conversation with Great People. Everyone’s story of life is a beautiful kaleidoscope mixed with what we do and not always knowing where we are going. Photography allows me to capture your most personal moments for you to save as a  reminder of your life’s journey.  Remember, It is not how you look, but rather how you feel about yourself and what to some might be just an average photo shoot, to you could be the discovery of a new chapter in your life—the empowerment chapter, the resurgence or whatever you wanna call it. All I know is you will never see yourself the same way again once we’re done.
+           I’m Terrance Shields and I am an 8 year US Army Veteran with a passion for Photography, Travel and Good Conversation with Great People. Everyone’s story of life is a beautiful kaleidoscope mixed with what we do and not always knowing where we are going. Photography allows me to capture your most personal moments for you to save as a  reminder of your life’s journey.  Remember, It is not how you look, but rather how you feel about yourself and what to some might be just an average photo shoot, to you could be the discovery of a new chapter in your life—the empowerment chapter, the resurgence or whatever you want to call it. All I know is you will never see yourself the same way again once we’re done.
           </p>
         </div>
 
