@@ -273,12 +273,25 @@
   color: #fff;
 }
 
+.icon-l:active {
+  color: #ffffff80;
+
+}
+
+.icon-r:active {
+  color: #ffffff80;
+}
+
 .icon-x {
   font-size: 35px;
   left: 35px;
   top: 100px;
-  color: #616161;
+  color: #fff;
   z-index: 100001
+}
+
+.icon-x:active {
+  color: #ffffff80;
 }
 
 .icon {
@@ -458,7 +471,8 @@ form input:focus, textarea {
       margin-top: 10px;
     }
     .popped-img {
-      /* width: 100%; */
+      width: 100%;
+      max-width: 100%;
     }
     .about p {
       width: 80%;
