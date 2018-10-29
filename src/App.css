@@ -74,6 +74,7 @@
   top: 0;
   width: 100%;
   text-align: center;
+  z-index: 10000;
 }
 
 .header p {
@@ -150,6 +151,62 @@
   transition: .1s;
 }
 
+.album-card {
+  height: 250px;
+  width: 250px;
+  position: relative;
+  background-color: #000;
+  overflow: hidden;
+  margin: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.album-n {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  color: #fff;
+  font-weight: 100;
+  font-size: 21px;
+  background-color: rgba(0, 0, 0, 0.80);
+  transition: .3s;
+}
+
+.album-n:hover {
+  opacity: 1;
+}
+
+.album-n:active {
+  background-color: rgba(0, 0, 0, 0.90);
+}
+
+.img-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.album-title {
+  color: #d4ae93;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
 .img-card {
   height: 250px;
   width: 250px;
@@ -157,12 +214,20 @@
   background-color: #000;
   overflow: hidden;
   margin: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .img-itm {
-  width: 150%;
-  object-fit: cover;
+  width: 375px;
+  position: absolute;
+  left: -50px;
+  /* align-self: center; */
+  /* height: 250px; */
+  /* object-fit: cover; */
   background-color: #000;
+  /* margin-top: 10px; */
 }
 
 .img-gal {
@@ -183,6 +248,37 @@
   background: #00000099;
   height: 100%;
   transition: .3s;
+}
+
+.popped-img {
+  width: auto;
+  height: auto;
+  max-width: 60%;
+  max-height: 90%;
+}
+
+.icon-l, .icon-r ,.icon-x {
+  position: absolute;
+  align-self: center;
+}
+
+.icon-l {
+  left: 20px;
+  font-size: 51px;
+  color: #fff;
+}
+.icon-r {
+  right: 20px;
+  font-size: 51px;
+  color: #fff;
+}
+
+.icon-x {
+  font-size: 35px;
+  left: 35px;
+  top: 100px;
+  color: #616161;
+  z-index: 100001
 }
 
 .icon {
@@ -220,13 +316,14 @@
 .contact {
   display: flex;
   flex-direction: column;
-  padding: 75px;
+  padding-top: 75px;
+
 }
 
 
 .contact h2 {
   font-size: calc(15px + 2vmin);
-  font-weight: bold;
+  font-weight: 200;
   color: #d4ae93;
 }
 
@@ -270,7 +367,7 @@ form input:focus, textarea {
   background-color: #d4ae93;
   color: #212121;
   border: 0px solid #616161;
-  transition: .3s;
+  transition: .1s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -279,8 +376,17 @@ form input:focus, textarea {
   margin: 10px;
 }
 
+.submit h3 {
+  transition: .3s;
+}
+
+
+.submit:hover h3 {
+  color: rgba(0,0,0,.5);
+}
+
 .submit:active {
-  background-color: #616161;
+  background-color: #d4ae9390;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -340,28 +446,37 @@ form input:focus, textarea {
       margin-right: 0px;
     }
     form input, textarea{
-      width: 100%;
+      width: 90%;
       margin: 0px;
       margin-bottom: 10px;
 
     }
     .submit {
       height: 50px;
-      width: 100%;
+      width: 90%;
       margin: 0px;
       margin-top: 10px;
     }
     .popped-img {
-      width: 100%;
+      /* width: 100%; */
     }
     .about p {
       width: 80%;
     }
     .logo-2 {
       width: 15%;
+      display: none;
     }
     .footer {
       flex-direction: column;
+    }
+    .img-gal {
+      background-color: #000;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 90px;
     }
 
 }

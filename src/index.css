@@ -2,8 +2,8 @@
 html {
   margin: 0;
   padding: 0;
-  height: auto;
-  overflow: scroll;
+  /* height: auto; */
+  /* overflow: scroll; */
 }
 
 body {
@@ -15,8 +15,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #000;
-  overflow: hidden;
-  height: auto;
+  /* overflow: hidden; */
+  /* height: auto; */
 }
 
 code {

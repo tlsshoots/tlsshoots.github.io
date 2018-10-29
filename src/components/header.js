@@ -13,7 +13,7 @@ class Header extends Component {
     return (
         <header className="header">
           <p onClick={() => {this.props.homeSwitch('about')}}>about</p>
-          <p onClick={() => {this.props.homeSwitch('contact')}}>contact</p>
+          <p onClick={() => {this.props.contactSwitch()}}>contact</p>
           <p onClick={() => {this.props.gallerySwitch()}}>gallery</p>
         </header>
     );
