@@ -63,7 +63,7 @@ class App extends Component {
 
   }
 
-  fadeIn(ms=200) {
+  fadeIn(ms=0) {
     let _this = this;
     setTimeout(function(){
       _this.setState({
@@ -72,13 +72,13 @@ class App extends Component {
     }, ms);
   }
 
-  fadeOut() {
+  fadeOut(ms=0) {
     let _this = this;
     setTimeout(function(){
       _this.setState({
         opacity: 0,
       })
-    }, 200);
+    }, ms);
   }
 
   toggleGallery() {
@@ -90,7 +90,7 @@ class App extends Component {
         gallery: _this.renderAlbums()
       })
       _this.fadeIn();
-    }, 800);
+    }, 0);
   }
 
   toggleContact() {
@@ -102,7 +102,7 @@ class App extends Component {
           body: 'home'
         })
         _this.fadeIn();
-      }, 800);
+      }, 0);
     } else {
       this.fadeOut();
       setTimeout(function(){
@@ -110,7 +110,7 @@ class App extends Component {
           body: 'contact'
         })
         _this.fadeIn();
-      }, 800);
+      }, 0);
     }
   }
 
@@ -159,7 +159,7 @@ renderAlbums() {
           }
         })
         _this.fadeIn();
-      }, 800);
+      }, 0);
   }
 
   clearGallery() {
@@ -170,7 +170,7 @@ renderAlbums() {
           gallery: _this.renderAlbums()
         })
         _this.fadeIn();
-      }, 800);
+      }, 0);
   }
 
   popImage(cardImg, idx) {
@@ -185,7 +185,7 @@ renderAlbums() {
         }
       })
       _this.fadeIn();
-    }, 800);
+    }, 0);
   }
 
   togglePopImage() {
@@ -194,14 +194,20 @@ renderAlbums() {
     this.fadeOut();
     setTimeout(function(){
       _this.setState({
-        activeImg: {index: 0, img: ''},
         activeImgStyle: {
           zIndex: -10,
           opacity: 0,
         }
       })
       _this.fadeIn();
-    }, 800);
+    }, 0);
+
+    setTimeout(function(){
+      _this.setState({
+        activeImg: {index: 0, img: ''},
+      })
+      _this.fadeIn();
+    }, 100);
   }
 
   goHome(sec) {
@@ -213,7 +219,7 @@ renderAlbums() {
           body: 'home'
         })
         _this.refs[sec].scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 800);
+      }, 0);
     } else if (this.state.body === 'contact') {
       this.toggleContact();
       setTimeout(function(){
@@ -221,7 +227,7 @@ renderAlbums() {
           body: 'home'
         })
         _this.refs[sec].scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 800);
+      }, 0);
     } else {
       setTimeout(function(){
         _this.setState({

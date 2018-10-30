@@ -17,9 +17,9 @@ let Baby = [
 ]
 
 let Downtown = [
+"https://s3.amazonaws.com/tlsshoots/Downtown+Magazine+x+STK/3-IMG_7814.jpg",
 "https://s3.amazonaws.com/tlsshoots/Downtown+Magazine+x+STK/1-IMG_7810.jpg",
 "https://s3.amazonaws.com/tlsshoots/Downtown+Magazine+x+STK/2-IMG_7811.jpg",
-"https://s3.amazonaws.com/tlsshoots/Downtown+Magazine+x+STK/3-IMG_7814.jpg",
 "https://s3.amazonaws.com/tlsshoots/Downtown+Magazine+x+STK/4-IMG_7818.jpg",
 "https://s3.amazonaws.com/tlsshoots/Downtown+Magazine+x+STK/5-IMG_7820.jpg",
 "https://s3.amazonaws.com/tlsshoots/Downtown+Magazine+x+STK/6-IMG_7821.jpg",
