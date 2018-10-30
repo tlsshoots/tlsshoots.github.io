@@ -10,8 +10,17 @@ import { faEnvelope, faArrowCircleRight, faArrowCircleLeft, faTimes } from '@for
 import { faInstagram, faTwitter, faFacebook } from '@fortawesome/fontawesome-free-brands'
 
 import Header from './components/header.js'
-import { Delta, Baby, Downtown, Fun, Green, Motorsport, Soiree, DeeDee } from './gallery'
+import {
+  Delta, Baby, Downtown,
+  Fun, Green, Motorsport,
+  Soiree, DeeDee
+} from './gallery'
 
+import {
+  DeltaLow, DowntownLow, BabyLow,
+  FunLow, GreenLow, MotorsportLow,
+  SoireeLow, DeeDeeLow
+} from './lowRes.js'
 
 library.add(faInstagram)
 library.add(faTwitter)
@@ -22,14 +31,14 @@ library.add(faArrowCircleLeft)
 library.add(faTimes)
 
 const albums = [
-  {title: "Delta Alpha Zeta Fall 17", images: Delta},
-  {title: "Baby Tiara", images: Baby},
-  {title: "Downtown Magazine x STK", images: Downtown},
-  {title: "Fun and Family", images: Fun},
-  {title: "Green Shields Travel", images: Green},
-  {title: "Motorsport", images: Motorsport},
-  {title: "Soiree in the Park", images: Soiree},
-  {title: "DeeDee’s NYC Experience", images: DeeDee}
+  {title: "Delta Alpha Zeta Fall 17", images: Delta, lowRes: DeltaLow},
+  {title: "Baby Tiara", images: Baby, lowRes: BabyLow},
+  {title: "Downtown Magazine x STK", images: Downtown, lowRes: DowntownLow},
+  {title: "Fun and Family", images: Fun, lowRes: FunLow},
+  {title: "Green Shields Travel", images: Green, lowRes: GreenLow},
+  {title: "Motorsport", images: Motorsport, lowRes: MotorsportLow},
+  {title: "Soiree in the Park", images: Soiree, lowRes: SoireeLow},
+  {title: "DeeDee’s NYC Experience", images: DeeDee, lowRes: DeeDeeLow}
 ]
 
 
@@ -57,6 +66,7 @@ class App extends Component {
   componentDidMount() {
     this.fadeIn();
     this.fetchPhotos()
+
   }
 
   fetchPhotos() {
@@ -116,10 +126,11 @@ class App extends Component {
 
   renderGallery(gallery) {
     let array = [];
-    for (var i = 0; i < gallery.length; i++) {
+    for (var i = 0; i < gallery.images.length; i++) {
       array.push(
-        <div onClick={this.popImage.bind(this, gallery[i], i)} className="img-card">
-          <img src={gallery[i]} className="img-itm" alt="img-itm" />
+        <div onClick={this.popImage.bind(this, gallery.images[i], i)} className="img-card">
+          <img src={gallery.lowRes[i]} className="img-itm" alt="img-itm" />
+          <img src={gallery.images[i]} className="img-itm" alt="img-itm" />
           <img src={cover} className="img-cover" alt="cover" />
           <p></p>
         </div>
@@ -133,7 +144,8 @@ renderAlbums() {
     let array = [];
     for (var i = 0; i < albums.length; i++) {
       array.push(
-        <div onClick={this.setGallery.bind(this, albums[i].images)} className="album-card">
+        <div onClick={this.setGallery.bind(this, albums[i])} className="album-card">
+          <img src={albums[i].lowRes[0]} className="img-itm" alt="img-itm" />
           <img src={albums[i].images[0]} className="img-itm" alt="img-itm" />
           <img src={cover} className="img-cover" alt="cover" />
           <div className="album-n"></div>
@@ -373,6 +385,10 @@ renderAlbums() {
       body = contact;
     }
 
+    // body = []
+    // for (var i = 0; i < FunLow.length; i++) {
+    //   body.push(<img src={FunLow[i]} className="" alt="" style={{height: 100, width: 100}}/>)
+    // }
     return (
       <div className="App" style={{opacity: this.state.opacity}}>
         <Header homeSwitch={this.goHome.bind(this)} gallerySwitch={this.toggleGallery.bind(this)} contactSwitch={this.toggleContact.bind(this)} />
