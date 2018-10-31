@@ -1,5 +1,5 @@
 {
-  "homepage": "https://tlsshoots.github.io/",
+  "homepage": "https://tlsshoots.github.io",
   "name": "tls-shoots",
   "version": "0.1.0",
   "engines": {
@@ -21,7 +21,6 @@
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.5"
   },
-
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
