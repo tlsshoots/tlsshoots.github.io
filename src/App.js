@@ -13,7 +13,7 @@ import Header from './components/header.js'
 import {
   Delta, Baby, Downtown,
   Fun, Green, Motorsport,
-  Soiree, DeeDee
+  Soiree, DeeDee, Mist, Bow, Munchies
 } from './gallery'
 
 import {
@@ -38,7 +38,9 @@ const albums = [
   {title: "Green Shields Travel", images: Green, lowRes: GreenLow},
   {title: "Motorsport", images: Motorsport, lowRes: MotorsportLow},
   {title: "Soiree in the Park", images: Soiree, lowRes: SoireeLow},
-  {title: "DeeDee’s NYC Experience", images: DeeDee, lowRes: DeeDeeLow}
+  {title: "Boozy Brunch @ Mist", images: Mist, lowRes: []},
+  {title: "Bow Wow x Power Wave", images: Bow, lowRes: []},
+  {title: "Munchies Halloween Party", images: Munchies, lowRes: []}
 ]
 
 
@@ -124,13 +126,13 @@ class App extends Component {
     }
   }
 
+  // <img src={gallery.lowRes[i]} className="img-itm-reg" alt="img-itm" />
   renderGallery(gallery) {
     let array = [];
     for (var i = 0; i < gallery.images.length; i++) {
       array.push(
         <div onClick={this.popImage.bind(this, gallery.images[i], i)} className="img-card">
-          <img src={gallery.lowRes[i]} className="img-itm" alt="img-itm" />
-          <img src={gallery.images[i]} className="img-itm" alt="img-itm" />
+          <img src={gallery.images[i]} className="img-itm-reg" alt="img-itm" />
           <img src={cover} className="img-cover" alt="cover" />
           <p></p>
         </div>
@@ -350,7 +352,7 @@ renderAlbums() {
                style={{fontSize: 25, color: '#d4ae93'}}>
                About Me
              </span><br/><br/><br/>
-           I’m Terrance Shields and I am an 8 year US Army Veteran with a passion for Photography, Travel and Good Conversation with Great People. Everyone’s story of life is a beautiful kaleidoscope mixed with what we do and not always knowing where we are going. Photography allows me to capture your most personal moments for you to save as a  reminder of your life’s journey.  Remember, It is not how you look, but rather how you feel about yourself and what to some might be just an average photo shoot, to you could be the discovery of a new chapter in your life—the empowerment chapter, the resurgence or whatever you want to call it. All I know is you will never see yourself the same way again once we’re done.
+           My name is Terrance Shields and I am an 8 year US Army Veteran with a passion for Photography, Travel and Good Conversation with Great People. Everyone’s story of life is a beautiful kaleidoscope mixed with what we do and not always knowing where we are going. Photography allows me to capture your most personal moments for you to save as a  reminder of your life’s journey.  Remember, It is not how you look, but rather how you feel about yourself and what to some might be just an average photo shoot, to you could be the discovery of a new chapter in your life—the empowerment chapter, the resurgence or whatever you want to call it. All I know is you will never see yourself the same way again once we’re done.
           </p>
         </div>
 

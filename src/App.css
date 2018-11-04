@@ -2,6 +2,7 @@
   text-align: center;
   transition: .7s;
   font-family: 'Maven Pro', sans-serif;
+  font-family: AppleMyungjo;
   overflow: hidden;
 }
 
@@ -223,6 +224,17 @@
   /* align-self: center; */
   height: 250px;
   object-fit: cover;
+  background-color: #00000000;
+  /* margin-top: 10px; */
+}
+
+.img-itm-reg {
+  width: 250px;
+  position: absolute;
+  /* left: -50px; */
+  /* align-self: center; */
+  height: 250px;
+  object-fit: contain;
   background-color: #00000000;
   /* margin-top: 10px; */
 }
