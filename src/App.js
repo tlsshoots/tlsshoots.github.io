@@ -11,7 +11,7 @@ import loading from './circle-of-dots-png.png'
 import cover from './private.jpg'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faArrowCircleRight, faArrowCircleLeft, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faChevronRight, faChevronLeft, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faTwitter, faFacebook } from '@fortawesome/fontawesome-free-brands'
 
 import ImageLoader from 'react-loading-image'
@@ -33,8 +33,8 @@ library.add(faInstagram)
 library.add(faTwitter)
 library.add(faFacebook)
 library.add(faEnvelope)
-library.add(faArrowCircleRight)
-library.add(faArrowCircleLeft)
+library.add(faChevronRight)
+library.add(faChevronLeft)
 library.add(faTimes)
 
 const albums = [
@@ -136,8 +136,8 @@ class App extends Component {
     }
   }
 
-  // <img src={gallery.lowRes[i]} className="img-itm-reg" alt="img-itm" />
-  // <img src={gallery.images[i]} className="img-itm-reg" alt="img-itm" />
+  // <img unselectable="on" src={gallery.lowRes[i]} className="img-itm-reg" alt="img-itm" />
+  // <img unselectable="on" src={gallery.images[i]} className="img-itm-reg" alt="img-itm" />
   renderGallery(gallery) {
     let array = [];
     for (var i = 0; i < gallery.images.length; i++) {
@@ -157,7 +157,7 @@ class App extends Component {
             }
             error={() => <div>Loading...</div>}
           />
-          <img src={cover} className="img-cover" alt="cover" />
+          <img unselectable="on" src={cover} className="img-cover" alt="cover" />
           <p></p>
         </div>
       )
@@ -166,8 +166,8 @@ class App extends Component {
   }
 
 
-  // <img src={albums[i].lowRes[0]} className="img-itm" alt="img-itm" />
-  // <img src={albums[i].images[0]} className="img-itm" alt="img-itm" />
+  // <img unselectable="on" src={albums[i].lowRes[0]} className="img-itm" alt="img-itm" />
+  // <img unselectable="on" src={albums[i].images[0]} className="img-itm" alt="img-itm" />
 renderAlbums() {
     let array = [];
     for (var i = 0; i < albums.length; i++) {
@@ -186,7 +186,7 @@ renderAlbums() {
               }
               error={() => <div>Loading...</div>}
             />
-          <img src={cover} className="img-cover" alt="cover" />
+          <img unselectable="on" src={cover} className="img-cover" alt="cover" />
           <div className="album-n"></div>
           <p className="album-title">{albums[i].title}</p>
         </div>
@@ -225,6 +225,7 @@ renderAlbums() {
   }
 
   popImage(cardImg, idx) {
+
     let _this = this;
     this.fadeOut();
     setTimeout(function(){
@@ -324,10 +325,10 @@ renderAlbums() {
   nextPic(e) {
     e.preventDefault();
     let num = this.state.activeImg.index + 1
-    if (num < this.state.galleryAlbum.length) {
+    if (num < this.state.galleryAlbum.images.length) {
       this.setState({
         activeImg: {
-          index: num, img: this.state.galleryAlbum[num]
+          index: num, img: this.state.galleryAlbum.images[num]
         }
       })
     }
@@ -339,7 +340,7 @@ renderAlbums() {
     if (num >= 0) {
       this.setState({
         activeImg: {
-          index: num, img: this.state.galleryAlbum[num]
+          index: num, img: this.state.galleryAlbum.images[num]
         }
       })
     }
@@ -348,7 +349,7 @@ renderAlbums() {
   render() {
     let contact = (
       <div ref="contact" className="contact">
-        <img src={img} className="bg" alt="logo" />
+        <img unselectable="on" src={img} className="bg" alt="logo" />
 
         <h2>Contact</h2>
         <span hidden ref="err" style={{color: '#f44336', fontWeight: 'bold'}}>Please fill all fields before submitting</span>
@@ -375,10 +376,10 @@ renderAlbums() {
     let home =  (
       <div ref='home'>
         <div className="top">
-          <img src={img} className="bg" alt="logo" />
+          <img unselectable="on" src={img} className="bg" alt="logo" />
 
           <div className="splash">
-            <img src={logo} className="logo" alt="logo" />
+            <img unselectable="on" src={logo} className="logo" alt="logo" />
             <div></div>
           </div>
         </div>
@@ -398,18 +399,17 @@ renderAlbums() {
     let gallery = (
       <div style={{height: 'auto', position: 'relative'}}>
 
-        <img src={logo} onClick={this.goHome.bind(this, 'home')} className="logo-2" alt="logo" />
+        <img unselectable="on" src={logo} onClick={this.goHome.bind(this, 'home')} className="logo-2" alt="logo" />
         <div className="img-gal">
           {
             this.state.gallery
           }
         </div>
         <div style={this.state.activeImgStyle}  className="pop-img">
-          <img src={this.state.activeImg.img} className="popped-img" style={{resizeMode: 'contain', transition: '1s', background: '#000'}} alt="logo" />
-          <img src={cover} className="img-cover" alt="cover" />
-          <FontAwesomeIcon onClick={this.prevPic.bind(this)} className="icon-l" icon={faArrowCircleLeft} />
-          <FontAwesomeIcon onClick={this.nextPic.bind(this)} className="icon-r" icon={faArrowCircleRight} />
-          <FontAwesomeIcon onClick={this.togglePopImage.bind(this)} className="icon-x" icon={faTimes} />
+          <div onClick={this.togglePopImage.bind(this)}  style={{position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, background: 'rgba(0,0,0,0)'}}/>
+          <img unselectable="on" ref="pop" src={this.state.activeImg.img} className="popped-img" style={{resizeMode: 'contain', transition: '1s', background: '#000', zIndex:10001}} alt="logo" />
+          <FontAwesomeIcon onClick={this.prevPic.bind(this)} className="icon-l" style={{zIndex:10002}} icon={faChevronLeft} />
+          <FontAwesomeIcon onClick={this.nextPic.bind(this)} className="icon-r" style={{zIndex:10002}} icon={faChevronRight} />
         </div>
       </div>
     )
@@ -426,7 +426,7 @@ renderAlbums() {
 
     // body = []
     // for (var i = 0; i < FunLow.length; i++) {
-    //   body.push(<img src={FunLow[i]} className="" alt="" style={{height: 100, width: 100}}/>)
+    //   body.push(<img unselectable="on" src={FunLow[i]} className="" alt="" style={{height: 100, width: 100}}/>)
     // }
     return (
       <div className="App" style={{opacity: this.state.opacity}}>
