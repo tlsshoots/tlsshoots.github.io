@@ -80,20 +80,20 @@
   margin-right: 45px;
   font-size: 21px;
   transition: .3s;
-  color: #4d4d4d
+  color: #d4ae9370
 }
 
 .header p:hover {
-  color: #fff
+  color: #d4ae93
 }
 
 .header p:active {
-  color: #424242;
+  color: #d4ae9370;
   transition: .1s;
 }
 
 .header .active {
-  color: #fff;
+  color: #d4ae93;
 
 }
 

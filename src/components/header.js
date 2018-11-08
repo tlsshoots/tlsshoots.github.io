@@ -12,9 +12,9 @@ class Header extends Component {
   render() {
     return (
         <header className="header">
-          <p onClick={() => {this.props.homeSwitch('about')}}>about</p>
-          <p onClick={() => {this.props.contactSwitch()}}>contact</p>
-          <p onClick={() => {this.props.gallerySwitch()}}>gallery</p>
+          <p onClick={() => {this.props.homeSwitch('about')}}>About</p>
+          <p onClick={() => {this.props.contactSwitch()}}>Contact</p>
+          <p onClick={() => {this.props.gallerySwitch()}}>Gallery</p>
         </header>
     );
   }
