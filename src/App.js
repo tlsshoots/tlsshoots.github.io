@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import logo from './TLSLogo.png';
+import { FadeLoader } from 'react-spinners';
+import Loader from 'react-loader-spinner'
 import './App.css';
 import img from './tls-camera.jpg'
+
+
+import loading from './circle-of-dots-png.png'
 import cover from './private.jpg'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faArrowCircleRight, faArrowCircleLeft, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faTwitter, faFacebook } from '@fortawesome/fontawesome-free-brands'
 
+import ImageLoader from 'react-loading-image'
+
 import Header from './components/header.js'
 import {
   Delta, Baby, Downtown,
-  Fun, Green, Motorsport,
-  Soiree, DeeDee, Mist, Bow, Munchies
+  Fun, Green, Motorsport, SKBrunch,
+  Soiree, DeeDee, Mist, Bow, Munchies, Wedding
 } from './gallery'
 
 import {
   DeltaLow, DowntownLow, BabyLow,
   FunLow, GreenLow, MotorsportLow,
-  SoireeLow, DeeDeeLow
+  SoireeLow, DeeDeeLow,
 } from './lowRes.js'
 
 library.add(faInstagram)
@@ -31,6 +38,8 @@ library.add(faArrowCircleLeft)
 library.add(faTimes)
 
 const albums = [
+  {title: "S & K Brunch", images: SKBrunch, lowRes: []},
+  {title: 'Wedding', images: Wedding, lowRes: []},
   {title: "Delta Alpha Zeta Fall 17", images: Delta, lowRes: DeltaLow},
   {title: "Baby Tiara", images: Baby, lowRes: BabyLow},
   {title: "Downtown Magazine x STK", images: Downtown, lowRes: DowntownLow},
@@ -38,6 +47,7 @@ const albums = [
   {title: "Green Shields Travel", images: Green, lowRes: GreenLow},
   {title: "Motorsport", images: Motorsport, lowRes: MotorsportLow},
   {title: "Soiree in the Park", images: Soiree, lowRes: SoireeLow},
+  {title: "NYC With Dee Dee", images: DeeDee, lowRes: DeeDeeLow},
   {title: "Boozy Brunch @ Mist", images: Mist, lowRes: []},
   {title: "Bow Wow x Power Wave", images: Bow, lowRes: []},
   {title: "Munchies Halloween Party", images: Munchies, lowRes: []}
@@ -127,12 +137,26 @@ class App extends Component {
   }
 
   // <img src={gallery.lowRes[i]} className="img-itm-reg" alt="img-itm" />
+  // <img src={gallery.images[i]} className="img-itm-reg" alt="img-itm" />
   renderGallery(gallery) {
     let array = [];
     for (var i = 0; i < gallery.images.length; i++) {
       array.push(
         <div onClick={this.popImage.bind(this, gallery.images[i], i)} className="img-card">
-          <img src={gallery.images[i]} className="img-itm-reg" alt="img-itm" />
+          <ImageLoader
+            className="img-itm-reg"
+            src={gallery.images[i]}
+            style={{color: '#fff'}}
+            loading={() =>
+              <Loader
+                type="RevolvingDot"
+                color="#616161"
+                height="30"
+                width="30"
+                />
+            }
+            error={() => <div>Loading...</div>}
+          />
           <img src={cover} className="img-cover" alt="cover" />
           <p></p>
         </div>
@@ -142,13 +166,26 @@ class App extends Component {
   }
 
 
+  // <img src={albums[i].lowRes[0]} className="img-itm" alt="img-itm" />
+  // <img src={albums[i].images[0]} className="img-itm" alt="img-itm" />
 renderAlbums() {
     let array = [];
     for (var i = 0; i < albums.length; i++) {
       array.push(
         <div onClick={this.setGallery.bind(this, albums[i])} className="album-card">
-          <img src={albums[i].lowRes[0]} className="img-itm" alt="img-itm" />
-          <img src={albums[i].images[0]} className="img-itm" alt="img-itm" />
+            <ImageLoader
+              className="img-itm"
+              src={albums[i].images[0]}
+              loading={() =>
+                <Loader
+                     type="RevolvingDot"
+                     color="#616161"
+                     height="30"
+                     width="30"
+                  />
+              }
+              error={() => <div>Loading...</div>}
+            />
           <img src={cover} className="img-cover" alt="cover" />
           <div className="album-n"></div>
           <p className="album-title">{albums[i].title}</p>
