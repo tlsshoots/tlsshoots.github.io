@@ -390,7 +390,7 @@ renderAlbums() {
                style={{fontSize: 25, color: '#d4ae93'}}>
                About Me
              </span><br/><br/><br/>
-           My name is Terrance Shields and I am an 8 year US Army Veteran with a passion for Photography, Travel and Good Conversation with Great People. Everyone’s story of life is a beautiful kaleidoscope mixed with what we do and not always knowing where we are going. Photography allows me to capture your most personal moments for you to save as a  reminder of your life’s journey.  Remember, It is not how you look, but rather how you feel about yourself and what to some might be just an average photo shoot, to you could be the discovery of a new chapter in your life—the empowerment chapter, the resurgence or whatever you want to call it. All I know is you will never see yourself the same way again once we’re done.
+           My name is Terrance Shields and I am a freelance Photographer residing in New York City. I have always been passionate about all the beautiful sites to see in the world. During my time traveling in the Army I have been fortunate enough to see some of the most beautiful sites firsthand. I've developed an amazing eye for beauty whether I'm capturing your dream wedding, your eclectic and funky clothing line, or a fun and exciting night out in NYC it is my goal to create amazing memories that will always warm your heart and keep a smile on your face. Let me capture your world through my lens!
           </p>
         </div>
 
