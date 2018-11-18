@@ -20,7 +20,8 @@ import Header from './components/header.js'
 import {
   Delta, Baby, Downtown,
   Fun, Green, Motorsport, SKBrunch,
-  Soiree, DeeDee, Mist, Bow, Munchies, Wedding
+  Soiree, DeeDee, Mist, Bow, Munchies, Wedding,
+  Carraghers, Zachary
 } from './gallery'
 
 import {
@@ -38,6 +39,8 @@ library.add(faChevronLeft)
 library.add(faTimes)
 
 const albums = [
+  {title: "Zachery Prell x Sangmi Park ", images: Zachary, lowRes: []},
+  {title: "Waffles, Wings and Whiskey", images: Carraghers, lowRes: []},
   {title: "S & K Brunch", images: SKBrunch, lowRes: []},
   {title: 'Wedding', images: Wedding, lowRes: []},
   {title: "Delta Alpha Zeta Fall 17", images: Delta, lowRes: DeltaLow},
