@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+import { Link } from "react-router-dom";
+
 import '../App.css';
 
 class Header extends Component {
-
-  // constructor(props) {
-  //   super(props);
-  // }
-
-
   render() {
     return (
-        <header className="header">
-          <p onClick={() => {this.props.homeSwitch('about')}}>About</p>
-          <p onClick={() => {this.props.contactSwitch()}}>Contact</p>
-          <p onClick={() => {this.props.gallerySwitch()}}>Gallery</p>
-        </header>
+      <header className="header">
+        <Link className="menuItm" to={{ pathname: '/', state: { about: 'true'} }}>
+          About
+        </Link>
+
+        <Link className="menuItm" to="/contact">
+          Contact
+        </Link>
+
+        <Link className="menuItm" to="/galleries">
+          Gallery
+        </Link>
+      </header>
     );
   }
 }

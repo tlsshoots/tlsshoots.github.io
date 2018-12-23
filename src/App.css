@@ -75,21 +75,23 @@
   z-index: 10000;
 }
 
-.header p {
+.menuItm {
   font-weight: 200;
   margin-right: 45px;
   font-size: 21px;
   transition: .3s;
-  color: #d4ae9370
+  color: #d4ae9370;
+  text-decoration: none;
 }
 
-.header p:hover {
+.menuItm:hover {
   color: #d4ae93
 }
 
-.header p:active {
+.menuItm:active {
   color: #d4ae9370;
   transition: .1s;
+  text-decoration: none;
 }
 
 .header .active {
@@ -348,6 +350,7 @@
   font-size: calc(15px + 2vmin);
   font-weight: 200;
   color: #d4ae93;
+  text-align: center;
 }
 
 form {
