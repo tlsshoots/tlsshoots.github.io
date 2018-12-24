@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import {
   Header, Footer, Home, Admin,
-  Contact, Galleries, Gallery
+  Contact, Galleries, Gallery, AdminDocs
 } from './components/index.js';
 
 import './App.css';
@@ -40,6 +40,7 @@ class App extends Component {
         <Route path="/galleries" component={Galleries} />
         <Route path="/gallery" component={Gallery} />
         <Route path="/admin" component={Admin} />
+        <Route path="/adminDocs" component={AdminDocs} />
         { /* <Route component={Home} /> */ }
 
         <Footer/>

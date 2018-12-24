@@ -1,0 +1,15 @@
+.containerAdmin {
+  background-color: white;
+  text-align: left;
+  color: black;
+  padding: 30px;
+}
+
+.containerAdmin h1, .containerAdmin h2, .containerAdmin h3, .containerAdmin h4 {
+  color: black;
+  font-weight: bold;
+}
+
+.containerAdmin h2 {
+  text-decoration: underline;
+}

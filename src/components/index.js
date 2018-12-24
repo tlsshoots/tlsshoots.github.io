@@ -7,6 +7,7 @@ import Contact from './contact.js';
 import Galleries from './galleries.js';
 import Gallery from './gallery.js';
 import Admin from './admin.js';
+import AdminDocs from './adminDocs.js';
 
 import '../App.css';
 
@@ -18,6 +19,7 @@ export {
   Galleries,
   Gallery,
   Admin,
+  AdminDocs
 }
 
 export default  {
@@ -28,4 +30,5 @@ export default  {
   Galleries,
   Gallery,
   Admin,
+  AdminDocs
 }

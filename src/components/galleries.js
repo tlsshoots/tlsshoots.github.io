@@ -23,7 +23,7 @@ class Galleries extends Component {
   }
 
   async getAlbums() {
-    fetch('http://localhost:3000/albums', {
+    fetch('https://enigmatic-lake-22259.herokuapp.com/albums', {
       method: 'GET',
       mode: 'cors',
       headers: {
@@ -40,7 +40,7 @@ class Galleries extends Component {
       })
 
       this.setState({
-        albums: sortedResp
+        albums: sortedResp.reverse()
       })
 
       console.log('=====API GET=====', sortedResp)
@@ -80,7 +80,7 @@ renderAlbums() {
           <div className="album-card">
           <ImageLoader
             className="img-itm"
-            src={this.state.albums[i].images[0].url}
+            src={this.state.albums[i].images[this.state.albums[i].album.cover].url}
             loading={() =>
               <Loader
               type="RevolvingDot"

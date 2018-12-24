@@ -43,7 +43,7 @@ class Admin extends Component {
   }
 
   async getAlbums() {
-    fetch('http://localhost:3000/albums', {
+    fetch('https://enigmatic-lake-22259.herokuapp.com/albums', {
       method: 'GET',
       mode: 'cors',
       headers: {
@@ -91,7 +91,7 @@ class Admin extends Component {
       return;
     }
     if(window.confirm('Are you sure you want to change the Album title?')) {
-      fetch(`http://localhost:3000/albums/${this.state.activeAlbum.album.id}`, {
+      fetch(`https://enigmatic-lake-22259.herokuapp.com/albums/${this.state.activeAlbum.album.id}`, {
         method: 'PUT',
         mode: 'cors',
         headers: {
@@ -128,7 +128,7 @@ class Admin extends Component {
 
   updateAlbumCover(imgObj) {
     if(window.confirm('Are you sure you want to change the cover image?')) {
-      fetch(`http://localhost:3000/albums/${this.state.activeAlbum.album.id}`, {
+      fetch(`https://enigmatic-lake-22259.herokuapp.com/albums/${this.state.activeAlbum.album.id}`, {
         method: 'PUT',
         mode: 'cors',
         headers: {
@@ -246,7 +246,7 @@ class Admin extends Component {
   uploadNewAlbumServer() {
     console.log('======here LLL======', this.state.awsFiles)
     let location = this.state.awsFiles[0].split('/')[3]
-    fetch(`http://localhost:3000/albums`, {
+    fetch(`https://enigmatic-lake-22259.herokuapp.com/albums`, {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -301,7 +301,7 @@ class Admin extends Component {
         .catch(err => console.error(err))
 
 
-        fetch(`http://localhost:3000/images/${this.state.activeAlbum.images[i].id}`, {
+        fetch(`https://enigmatic-lake-22259.herokuapp.com/images/${this.state.activeAlbum.images[i].id}`, {
           method: 'DELETE',
           mode: 'cors',
           headers: {
@@ -331,7 +331,7 @@ class Admin extends Component {
 
   deleteAlbumServer() {
     let _this = this
-    fetch(`http://localhost:3000/albums/${this.state.activeAlbum.album.id}`, {
+    fetch(`https://enigmatic-lake-22259.herokuapp.com/albums/${this.state.activeAlbum.album.id}`, {
       method: 'DELETE',
       mode: 'cors',
       headers: {
