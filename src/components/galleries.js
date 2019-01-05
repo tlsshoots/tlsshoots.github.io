@@ -35,7 +35,7 @@ class Galleries extends Component {
     .then(response => response.json())
     .then((responseJson) => {
       let sortedResp = responseJson.map(obj => {
-        let result = {album: obj.album, images: obj.images.reverse()}
+        let result = {album: obj.album, images: obj.images}
         return result
       })
 
@@ -75,8 +75,9 @@ class Galleries extends Component {
 renderAlbums() {
     let array = [];
     for (var i = 0; i < this.state.albums.length; i++) {
+      console.log(this.state.albums);
       array.push(
-        <Link to={{ pathname: '/gallery', state: { album: this.state.albums[i]} }}>
+        <Link to={{ pathname: `/gallery/${this.state.albums[i].album.id}`, state: { album: this.state.albums[i]} }}>
           <div className="album-card">
           <ImageLoader
             className="img-itm"

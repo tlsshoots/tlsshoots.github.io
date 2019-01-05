@@ -34,12 +34,24 @@ class Admin extends Component {
       uploading: false,
       files: [],
       awsFiles: [],
-      newFiles: false
+      newFiles: false,
+      logged: false,
+      adminPass : ''
     }
   }
 
   componentDidMount() {
     this.getAlbums();
+  }
+
+  verifyUser() {
+    if (this.state.adminPass == "M!ch3ll3S") {
+      this.setState({
+        logged: true
+      })
+    } else {
+      alert('wrong password')
+    }
   }
 
   async getAlbums() {
@@ -118,6 +130,12 @@ class Admin extends Component {
       })
     }
 
+  }
+
+  handleAdminChangeText = e => {
+    this.setState({
+      adminPass: e.target.value
+    })
   }
 
   handleChangeText = e => {
@@ -495,67 +513,82 @@ class Admin extends Component {
 
 
   render() {
-    return (
-      <div className="container">
-        <h1>Admin</h1>
+    if (this.state.logged) {
+      return (
+        <div className="container">
+          <h1>Admin</h1>
 
 
 
-        <div className="bodyContainer">
+          <div className="bodyContainer">
 
-          <div className="rightContainer">
+            <div className="rightContainer">
 
-            <div className="actionsContainer">
-              <h2>Actions</h2>
-              <div className="actionsWrapper">
-                <div className="btn"><p>upload album</p>
-                <input className="fileInput" type='file' name="New Gallery" onChange={this.selectNewAlbum.bind(this)} multiple="" directory="" webkitdirectory="" mozdirectory="" />
-              </div>
-              <div className="btn" onClick={this.updateAlbumTitle.bind(this)}><p>update title</p></div>
-              <div className="btn" onClick={this.clearEditor.bind(this)}><p>clear editor</p></div>
-              <div className="btn" onClick={this.uploadNewAlbumS3.bind(this)}><p>publish album</p></div>
-              <div className="btn" onClick={this.deleteAlbumS3.bind(this)}><p>delete album</p></div>
-            </div>
-          </div>
-
-            <div className="editorContainer">
-
-              <h2>Album Editor - <strong style={{fontWeight: '900', color: '#d4ae93'}}>{ this.state.albumTitle }</strong> </h2>
-              <input onChange={this.handleChangeText.bind(this)} value={this.state.albumTitleInput} placeholder="Update Album Title" type="text" className="titleInput" />
-
-              <div className="filesContainer">
-                { this.renderActiveAlbumFiles() }
+              <div className="actionsContainer">
+                <h2>Actions</h2>
+                <div className="actionsWrapper">
+                  <div className="btn"><p>upload album</p>
+                  <input className="fileInput" type='file' name="New Gallery" onChange={this.selectNewAlbum.bind(this)} multiple="" directory="" webkitdirectory="" mozdirectory="" />
+                </div>
+                <div className="btn" onClick={this.updateAlbumTitle.bind(this)}><p>update title</p></div>
+                <div className="btn" onClick={this.clearEditor.bind(this)}><p>clear editor</p></div>
+                <div className="btn" onClick={this.uploadNewAlbumS3.bind(this)}><p>publish album</p></div>
+                <div className="btn" onClick={this.deleteAlbumS3.bind(this)}><p>delete album</p></div>
               </div>
             </div>
-          </div>
 
-          <div className="albumsContainer">
-            <h2>Stored Albums</h2>
-            <div className="albumIcons">
-              { this.renderAlbums() }
+              <div className="editorContainer">
+
+                <h2>Album Editor - <strong style={{fontWeight: '900', color: '#d4ae93'}}>{ this.state.albumTitle }</strong> </h2>
+                <input onChange={this.handleChangeText.bind(this)} value={this.state.albumTitleInput} placeholder="Update Album Title" type="text" className="titleInput" />
+
+                <div className="filesContainer">
+                  { this.renderActiveAlbumFiles() }
+                </div>
+              </div>
             </div>
+
+            <div className="albumsContainer">
+              <h2>Stored Albums</h2>
+              <div className="albumIcons">
+                { this.renderAlbums() }
+              </div>
+            </div>
+          </div>
+          {
+            this.state.uploading ?
+            (<div style={{
+              color: '#fff',
+              fontSize: 42,
+              position: 'fixed',
+              top: 0,
+              bottom: 0,
+              left: 0,
+              right: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: '#00000090'}}>
+              {this.state.newFiles ? "uploaded" : "deleted"}: {this.state.counter}/{this.state.newFiles ? this.state.files.length : this.state.activeAlbum.images.length }
+            </div>) :
+            (<div />)
+          }
+        </div>
+      );
+
+    } else {
+      return (
+        <div className="container">
+          <div className="editorContainer" style={{width: '95%'}}>
+
+            <h2>Admin Login</h2>
+            <input value={this.state.adminPass} type="password" onChange={this.handleAdminChangeText.bind(this)} placeholder="Enter Password" className="titleInput" />
+
+            <div className="btn" style={{width: '20%'}} onClick={this.verifyUser.bind(this)}><p>enter</p></div>
           </div>
         </div>
-        {
-          this.state.uploading ?
-          (<div style={{
-            color: '#fff',
-            fontSize: 42,
-            position: 'fixed',
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: '#00000090'}}>
-            {this.state.newFiles ? "uploaded" : "deleted"}: {this.state.counter}/{this.state.newFiles ? this.state.files.length : this.state.activeAlbum.images.length }
-          </div>) :
-          (<div />)
-        }
-      </div>
-    );
+      )
+    }
   }
 
 }

@@ -36,9 +36,42 @@ class Gallery extends Component {
   componentDidMount() {
     let _this = this;
     this.fadeOut();
-    setTimeout(function(){
+    if (this.props.location.state) {
+      setTimeout(function(){
+        _this.setState({
+          galleryAlbum: _this.props.location.state.album,
+          activeImg: {index: 0, img: ''},
+          activeImgStyle: {
+            zIndex: -10,
+            opacity: 0,
+            transition: '.3s'
+          }
+        })
+        _this.fadeIn();
+      }, 0);
+
+    } else {
+      _this.getAlbum()
+    }
+  }
+
+  async getAlbum() {
+    let _this = this;
+
+    fetch(`https://enigmatic-lake-22259.herokuapp.com/albums/${this.props.match.params.id}`, {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then((responseJson) => {
+      console.log('responseJson', responseJson)
       _this.setState({
-        galleryAlbum: _this.props.location.state.album,
+        galleryAlbum: {album: responseJson.album, images: responseJson.images},
         activeImg: {index: 0, img: ''},
         activeImgStyle: {
           zIndex: -10,
@@ -46,8 +79,12 @@ class Gallery extends Component {
           transition: '.3s'
         }
       })
-      _this.fadeIn();
-    }, 0);
+
+      // console.log('=====API GET=====', sortedResp)
+    })
+    .catch(error => {
+      console.log('=====API error=====', error)
+    })
   }
 
   fadeIn(ms=0) {
@@ -73,8 +110,9 @@ class Gallery extends Component {
     let array = [];
     if (gallery.images) {
       for (var i = 0; i < gallery.images.length; i++) {
+
         array.push(
-          <div className="img-card" onClick={this.popImage.bind(this, gallery.images[i].url, i)}>
+          <div className="img-card" onClick={this.popImage.bind(this, gallery.images[i].url, i, gallery.images[i].id)}>
           <ImageLoader
           className="img-itm-reg"
           src={gallery.images[i].url}
@@ -98,7 +136,7 @@ class Gallery extends Component {
     return array;
   }
 
-  popImage(cardImg, idx) {
+  popImage(cardImg, idx, imageId) {
     let _this = this;
     this.fadeOut();
     setTimeout(function(){
@@ -107,7 +145,8 @@ class Gallery extends Component {
         activeImgStyle: {
           zIndex: 10,
           opacity: 1
-        }
+        },
+        imageId: imageId
       })
       _this.fadeIn();
     }, 0);
@@ -121,7 +160,8 @@ class Gallery extends Component {
         activeImgStyle: {
           zIndex: -10,
           opacity: 0,
-        }
+        },
+        imageId: 0
       })
       _this.fadeIn();
     }, 0);
@@ -160,6 +200,25 @@ class Gallery extends Component {
     }
   }
 
+  setLinkStyle() {
+    if (this.refs["pop"]) {
+      let elem = this.refs["pop"]
+      return {
+        position: 'absolute',
+        bottom: elem.bottom,
+        height: elem.height,
+        left: elem.left,
+        right: elem.right,
+        top: elem.top,
+        width: elem.width,
+        zIndex: 999999999
+      }
+
+    } else {
+      return {height: 0}
+    }
+  }
+
   render() {
     return (
       <div style={{height: 'auto', position: 'relative'}}>
@@ -171,11 +230,13 @@ class Gallery extends Component {
           }
         </div>
         <div style={this.state.activeImgStyle}  className="pop-img">
-          <div onClick={this.togglePopImage.bind(this)} style={{position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, background: 'rgba(0,0,0,0)'}}/>
-          <img unselectable="on" ref="pop" src={this.state.activeImg.img} className="popped-img" style={{resizeMode: 'contain', transition: '1s', background: '#000', zIndex:10001}} alt="logo" />
-          <FontAwesomeIcon onClick={this.prevPic.bind(this)} className="icon-l" style={{zIndex:10002}} icon={faChevronLeft} />
-          <FontAwesomeIcon onClick={this.nextPic.bind(this)} className="icon-r" style={{zIndex:10002}} icon={faChevronRight} />
-        </div>
+            <div onClick={this.togglePopImage.bind(this)} style={{position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, background: 'rgba(0,0,0,0)'}}/>
+            <img unselectable="on" ref="pop" src={this.state.activeImg.img} className="popped-img" style={{resizeMode: 'contain', transition: '1s', background: '#000', zIndex:10001}} alt="logo" />
+            <Link to={`/images/${this.state.imageId}`} style={this.setLinkStyle()}>
+            </Link>
+            <FontAwesomeIcon onClick={this.prevPic.bind(this)} className="icon-l" style={{zIndex:10002}} icon={faChevronLeft} />
+            <FontAwesomeIcon onClick={this.nextPic.bind(this)} className="icon-r" style={{zIndex:10002}} icon={faChevronRight} />
+          </div>
       </div>
     );
   }

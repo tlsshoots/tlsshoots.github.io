@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import {
-  Header, Footer, Home, Admin,
+  Header, Footer, Home, Admin, ImageView,
   Contact, Galleries, Gallery, AdminDocs
 } from './components/index.js';
 
@@ -32,13 +32,14 @@ class App extends Component {
   render() {
     return (
     <Router>
-      <div className="App" style={{opacity: this.state.opacity}}>
+      <div className="App" style={{opacity: this.state.opacity }}>
         <Header/>
 
         <Route path="/" exact component={Home} />
         <Route path="/contact" component={Contact} />
+        <Route path="/gallery/:id" component={Gallery} />
         <Route path="/galleries" component={Galleries} />
-        <Route path="/gallery" component={Gallery} />
+        <Route path="/images/:id" component={ImageView} />
         <Route path="/admin" component={Admin} />
         <Route path="/adminDocs" component={AdminDocs} />
         { /* <Route component={Home} /> */ }

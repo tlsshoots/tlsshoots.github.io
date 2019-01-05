@@ -1,3 +1,8 @@
+// - Font Style to Times
+// - Routing image and gallery ID
+// -  Docs highlight
+// -  Single image view loading carousel
+
 import React, { Component } from 'react';
 import '../adminDocs.css';
 

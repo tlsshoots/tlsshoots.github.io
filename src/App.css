@@ -1,8 +1,13 @@
+* {
+  font-family: 'Maven Pro', sans-serif;
+  font-family: 'Apple Myungjo';
+}
+
 .App {
   text-align: center;
   transition: .7s;
   font-family: 'Maven Pro', sans-serif;
-  font-family: AppleMyungjo;
+  font-family: 'AppleMyungjo';
   overflow: hidden;
 }
 
@@ -29,8 +34,7 @@
 
 .about {
   background: rgba(0,0,0,.80);
-
-  color: white;
+  /* color: white; */
   padding: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -38,12 +42,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'AppleMyungjo';
 }
 
 .about h2 {
   font-size: calc(15px + 2vmin);
   font-weight: bold;
   color: #d4ae93;
+  font-family: 'AppleMyungjo';
 }
 
 .about p {
@@ -57,6 +63,7 @@
   padding: 75px;
   padding-top: 75px;
   padding-bottom: 75px;
+  font-family: 'AppleMyungjo';
 }
 
 .header {
@@ -73,6 +80,8 @@
   width: 100%;
   text-align: center;
   z-index: 10000;
+  font-family: 'AppleMyungjo';
+
 }
 
 .menuItm {
@@ -82,6 +91,8 @@
   transition: .3s;
   color: #d4ae9370;
   text-decoration: none;
+  font-family: 'AppleMyungjo';
+
 }
 
 .menuItm:hover {
@@ -178,6 +189,8 @@
   font-size: 21px;
   background-color: rgba(0, 0, 0, 0.80);
   transition: .3s;
+  font-family: 'AppleMyungjo';
+  
 }
 
 .album-n:hover {
@@ -205,6 +218,8 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
+  font-family: 'AppleMyungjo';
+
 }
 
 .img-card {
@@ -327,14 +342,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'AppleMyungjo';
+
 }
 
 .footer p {
   color: #616161;
+  font-family: 'AppleMyungjo';
+
 }
 
 .footer a {
   margin: 10px;
+  font-family: 'AppleMyungjo';
+
 }
 
 .contact {
@@ -342,6 +363,7 @@
   flex-direction: column;
   padding-top: 75px;
   padding-bottom: 75px;
+  font-family: 'AppleMyungjo';
 
 }
 
@@ -351,6 +373,8 @@
   font-weight: 200;
   color: #d4ae93;
   text-align: center;
+  font-family: 'AppleMyungjo';
+
 }
 
 form {
@@ -359,6 +383,7 @@ form {
   /* align-items: center; */
   width: 100%;
   position: relative;
+  font-family: 'AppleMyungjo';
 
 }
 
@@ -374,12 +399,15 @@ form input, textarea{
   color: #fff;
   /* background-color: rgba(212,174,147,.60); */
   background-color: rgba(0,0,0,.70);
+  font-family: 'AppleMyungjo';
+
   /* background-color: #9B806E99; */
-  ;
 }
 
 textarea {
   height: 100px;
+  font-family: 'AppleMyungjo';
+
 }
 
 form input:focus, textarea {
@@ -400,10 +428,14 @@ form input:focus, textarea {
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
+  font-family: 'AppleMyungjo';
+
 }
 
 .submit h3 {
   transition: .3s;
+  font-family: 'AppleMyungjo';
+
 }
 
 
@@ -418,6 +450,8 @@ form input:focus, textarea {
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #e0e0e0;
     opacity: .5; /* Firefox */
+    font-family: 'AppleMyungjo';
+
 }
 
 .Loader {
