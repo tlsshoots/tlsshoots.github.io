@@ -7,17 +7,10 @@ import S3Client from 'aws-s3';
 import logo from '../TLSLogo.png';
 import img from '../tls-camera.jpg'
 import '../Admin.css';
+import awsKey from '../config.js';
 
 const width = window.innerWidth;
 const height = window.innerHeight;
-
-const config = {
-    bucketName: 'tlsshootsTest',
-    dirName: 'Test Folder',
-    region: 'us-east-1',
-    accessKeyId: 'AKIAJ3CL6AKH35TLR47Q',
-    secretAccessKey: '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',
-}
 
 class Admin extends Component {
 
@@ -225,8 +218,8 @@ class Admin extends Component {
         bucketName: 'tlsshoots',
         dirName: this.state.albumTitleInput,
         region: 'us-east-1',
-        accessKeyId: 'AKIAIWUF6GHRWWD7QRWA',
-        secretAccessKey: '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',
+        accessKeyId: awsKey.access,
+        secretAccessKey: awsKey.secret,
     }
 
     let imgLinks = [];
