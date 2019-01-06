@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
 import {
   Header, Footer, Home, Admin, ImageView,
   Contact, Galleries, Gallery, AdminDocs
@@ -31,19 +31,19 @@ class App extends Component {
 
   render() {
     return (
-      <Router basename={process.env.PUBLIC_URL}>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <div className="App" style={{opacity: this.state.opacity }}>
           <Header/>
-          <Route path={process.env.PUBLIC_URL + "/"} exact component={Home} />
-          <Route path={process.env.PUBLIC_URL + "/contact"} component={Contact} />
-          <Route path={process.env.PUBLIC_URL + "/gallery/:id"} component={Gallery} />
-          <Route path={process.env.PUBLIC_URL + "/galleries"} component={Galleries} />
-          <Route path={process.env.PUBLIC_URL + "/images/:id"} component={ImageView} />
-          <Route path={process.env.PUBLIC_URL + "/admin"} component={Admin} />
-          <Route path={process.env.PUBLIC_URL + "/adminDocs"} component={AdminDocs} />
+          <Route path={"/"} exact component={Home} />
+          <Route path={"/contact"} component={Contact} />
+          <Route path={"/gallery/:id"} component={Gallery} />
+          <Route path={"/galleries"} component={Galleries} />
+          <Route path={"/images/:id"} component={ImageView} />
+          <Route path={"/admin"} component={Admin} />
+          <Route path={"/adminDocs"} component={AdminDocs} />
           <Footer/>
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }
