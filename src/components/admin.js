@@ -298,8 +298,8 @@ class Admin extends Component {
       let config = {
           bucketName: 'tlsshoots',
           dirName: this.state.activeAlbum.album.awsLocation,
-          accessKeyId: 'AKIAIWUF6GHRWWD7QRWA',
-          secretAccessKey: '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',
+          accessKeyId: awsKey.access,
+          secretAccessKey: awsKey.secret,
       }
 
       for (var i = 0; i < this.state.activeAlbum.images.length; i++) {
