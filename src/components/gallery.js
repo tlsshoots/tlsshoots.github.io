@@ -183,7 +183,8 @@ class Gallery extends Component {
       this.setState({
         activeImg: {
           index: num, img: this.state.galleryAlbum.images[num].url
-        }
+        },
+        imageId: this.state.galleryAlbum.images[num].id
       })
     }
   }
@@ -195,7 +196,8 @@ class Gallery extends Component {
       this.setState({
         activeImg: {
           index: num, img: this.state.galleryAlbum.images[num].url
-        }
+        },
+        imageId: this.state.galleryAlbum.images[num].id
       })
     }
   }
@@ -211,7 +213,7 @@ class Gallery extends Component {
         right: elem.right,
         top: elem.top,
         width: elem.width,
-        zIndex: 999999999
+        zIndex: 10001
       }
 
     } else {

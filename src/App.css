@@ -92,7 +92,6 @@
   color: #d4ae9370;
   text-decoration: none;
   font-family: 'AppleMyungjo';
-
 }
 
 .menuItm:hover {
@@ -190,7 +189,7 @@
   background-color: rgba(0, 0, 0, 0.80);
   transition: .3s;
   font-family: 'AppleMyungjo';
-  
+
 }
 
 .album-n:hover {
@@ -531,7 +530,7 @@ img {
       margin-top: 10px;
     }
     .popped-img {
-      width: 100%;
+      width: auto;
       max-width: 100%;
     }
     .about p {
@@ -551,6 +550,9 @@ img {
       flex-wrap: wrap;
       justify-content: center;
       padding-top: 90px;
+    }
+    .menuItm {
+      margin-right: 0px;
     }
 
 }
