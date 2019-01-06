@@ -15,8 +15,8 @@ const config = {
     bucketName: 'tlsshootsTest',
     dirName: 'Test Folder',
     region: 'us-east-1',
-    accessKeyId: 'AKIAIWUF6GHRWWD7QRWA',
-    secretAccessKey: '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',
+    accessKeyId: 'AKIAJ3CL6AKH35TLR47Q',
+    secretAccessKey: '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',
 }
 
 class Admin extends Component {
