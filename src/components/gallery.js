@@ -71,7 +71,7 @@ class Gallery extends Component {
     .then((responseJson) => {
       console.log('responseJson', responseJson)
       _this.setState({
-        galleryAlbum: {album: responseJson.album, images: responseJson.images},
+        galleryAlbum: {album: responseJson.album, images: responseJson.images.reverse()},
         activeImg: {index: 0, img: ''},
         activeImgStyle: {
           zIndex: -10,

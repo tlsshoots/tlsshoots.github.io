@@ -35,7 +35,7 @@ class Galleries extends Component {
     .then(response => response.json())
     .then((responseJson) => {
       let sortedResp = responseJson.map(obj => {
-        let result = {album: obj.album, images: obj.images}
+        let result = {album: obj.album, images: obj.images.reverse()}
         return result
       })
 

@@ -35,14 +35,14 @@ class App extends Component {
       <div className="App" style={{opacity: this.state.opacity }}>
         <Header/>
 
-        <Route path="/" exact component={Home} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/gallery/:id" component={Gallery} />
-        <Route path="/galleries" component={Galleries} />
-        <Route path="/images/:id" component={ImageView} />
-        <Route path="/admin" component={Admin} />
-        <Route path="/adminDocs" component={AdminDocs} />
-        { /* <Route component={Home} /> */ }
+        <Route path={`${process.env.PUBLIC_URL}/`} exact component={Home} />
+        <Route path={`${process.env.PUBLIC_URL}/contact`} component={Contact} />
+        <Route path={`${process.env.PUBLIC_URL}/gallery/:id`} component={Gallery} />
+        <Route path={`${process.env.PUBLIC_URL}/galleries`} component={Galleries} />
+        <Route path={`${process.env.PUBLIC_URL}/images/:id`} component={ImageView} />
+        <Route path={`${process.env.PUBLIC_URL}/admin`} component={Admin} />
+        <Route path={`${process.env.PUBLIC_URL}/adminDocs`} component={AdminDocs} />
+
 
         <Footer/>
       </div>
