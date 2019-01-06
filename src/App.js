@@ -31,10 +31,9 @@ class App extends Component {
 
   render() {
     return (
-    <Router>
-      <div className="App" style={{opacity: this.state.opacity }}>
-        <Header/>
-        <Router basename={process.env.PUBLIC_URL}>
+      <Router basename={process.env.PUBLIC_URL}>
+        <div className="App" style={{opacity: this.state.opacity }}>
+          <Header/>
           <Route path={process.env.PUBLIC_URL + "/"} exact component={Home} />
           <Route path={process.env.PUBLIC_URL + "/contact"} component={Contact} />
           <Route path={process.env.PUBLIC_URL + "/gallery/:id"} component={Gallery} />
@@ -42,11 +41,9 @@ class App extends Component {
           <Route path={process.env.PUBLIC_URL + "/images/:id"} component={ImageView} />
           <Route path={process.env.PUBLIC_URL + "/admin"} component={Admin} />
           <Route path={process.env.PUBLIC_URL + "/adminDocs"} component={AdminDocs} />
-        </Router>
-
-        <Footer/>
-      </div>
-    </Router>
+          <Footer/>
+        </div>
+      </Router>
     );
   }
 }
