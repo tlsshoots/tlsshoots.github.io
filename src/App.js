@@ -34,15 +34,15 @@ class App extends Component {
     <Router>
       <div className="App" style={{opacity: this.state.opacity }}>
         <Header/>
-
-        <Route path={`${process.env.PUBLIC_URL}/`} exact component={Home} />
-        <Route path={`${process.env.PUBLIC_URL}/contact`} component={Contact} />
-        <Route path={`${process.env.PUBLIC_URL}/gallery/:id`} component={Gallery} />
-        <Route path={`${process.env.PUBLIC_URL}/galleries`} component={Galleries} />
-        <Route path={`${process.env.PUBLIC_URL}/images/:id`} component={ImageView} />
-        <Route path={`${process.env.PUBLIC_URL}/admin`} component={Admin} />
-        <Route path={`${process.env.PUBLIC_URL}/adminDocs`} component={AdminDocs} />
-
+        <Router basename={process.env.PUBLIC_URL}>
+          <Route path={process.env.PUBLIC_URL + "/"} exact component={Home} />
+          <Route path={process.env.PUBLIC_URL + "/contact"} component={Contact} />
+          <Route path={process.env.PUBLIC_URL + "/gallery/:id"} component={Gallery} />
+          <Route path={process.env.PUBLIC_URL + "/galleries"} component={Galleries} />
+          <Route path={process.env.PUBLIC_URL + "/images/:id"} component={ImageView} />
+          <Route path={process.env.PUBLIC_URL + "/admin"} component={Admin} />
+          <Route path={process.env.PUBLIC_URL + "/adminDocs"} component={AdminDocs} />
+        </Router>
 
         <Footer/>
       </div>
